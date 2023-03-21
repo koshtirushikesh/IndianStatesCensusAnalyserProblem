@@ -69,11 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsvStateCences.cs" />
-<<<<<<< HEAD
     <Compile Include="IndianStateCensusExcepction.cs" />
-=======
     <Compile Include="CsvStateCode.cs" />
->>>>>>> UC2_loadStatesCodeData
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateCensusAnalyserModel.cs" />
@@ -81,15 +78,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-<<<<<<< HEAD
     <None Include="Files\StateCensusData %281%29.csv" />
     <None Include="Files\StateCensusData - Copy %282%29.json" />
     <None Include="Files\StateCensusData - Copy.csv" />
     <None Include="Files\StateCensusData.csv" />
     <None Include="Files\StateCode %281%29.csv" />
-=======
+    <None Include="Files\StateCode.csv" />
     <None Include="Files\StateCensusData.csv" />
->>>>>>> UC2_loadStatesCodeData
     <None Include="Files\StateCode.csv" />
     <None Include="packages.config" />
   </ItemGroup>
