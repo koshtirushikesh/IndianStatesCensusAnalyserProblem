@@ -12,6 +12,7 @@ namespace IndianStateCensusAnalyserProjectTest
         string stateCodeFilePath = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCode.csv";
         string stateCodeFile_IncorectPath = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCodee.csv";
         string stateCodeFile_IncorectType = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCode.txt";
+        string stateCodeFile_IncorectDelimiter = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCode - Copy.csv";
         
         CsvStateCode csvStateCode = new CsvStateCode();
 
@@ -44,6 +45,19 @@ namespace IndianStateCensusAnalyserProjectTest
             catch (Exception ex)
             {
                 Assert.AreEqual("File Type is Incorrect", ex.Message);
+            }
+        }
+
+        [Test]
+        public void GivenCorrectStatesCodeCsvfile_ButIncorrectFileDelimiter_ShouldThrowCustomeIncorectDelimiterException()
+        {
+            try
+            {
+                csvStateCode.ReadCodeData(stateCodeFile_IncorectDelimiter);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("File Delimiter is Incorrect", ex.Message);
             }
         }
     }

@@ -19,6 +19,9 @@ namespace IndianStateCensusAnalyserProject
             if (!filePath.EndsWith(".csv"))
                 throw new IndianStateCodeException(IndianStateCodeException.IndianStateCensusExcepctionType.INCORRECT_FILE_TYPE, "File Type is Incorrect");
 
+            var header =File.ReadAllLines(filePath);
+            if (header[0].Contains("/"))
+                throw new IndianStateCodeException(IndianStateCodeException.IndianStateCensusExcepctionType.INCORRECT_FILE_DELIMITER, "File Delimiter is Incorrect");
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {

@@ -12,6 +12,7 @@ namespace IndianStateCensusAnalyserProject
         {
             INCORRECT_FILE_PATH,
             INCORRECT_FILE_TYPE,
+            INCORRECT_FILE_DELIMITER,
         }
 
         public IndianStateCensusExcepctionType type;

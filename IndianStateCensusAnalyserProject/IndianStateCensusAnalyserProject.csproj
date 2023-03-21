@@ -84,6 +84,7 @@
     <None Include="Files\StateCensusData - Copy.csv" />
     <None Include="Files\StateCensusData.csv" />
     <None Include="Files\StateCode %281%29.csv" />
+    <None Include="Files\StateCode - Copy.csv" />
     <None Include="Files\StateCode.csv" />
     <None Include="Files\StateCensusData.csv" />
     <Content Include="Files\StateCode.txt" />
