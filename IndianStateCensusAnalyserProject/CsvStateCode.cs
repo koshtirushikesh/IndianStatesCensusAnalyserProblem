@@ -16,6 +16,9 @@ namespace IndianStateCensusAnalyserProject
             if (!File.Exists(filePath))
                 throw new IndianStateCodeException(IndianStateCodeException.IndianStateCensusExcepctionType.INCORRECT_FILE_PATH, "File Path is Incorrect");
 
+            if (!filePath.EndsWith(".csv"))
+                throw new IndianStateCodeException(IndianStateCodeException.IndianStateCensusExcepctionType.INCORRECT_FILE_TYPE, "File Type is Incorrect");
+
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {

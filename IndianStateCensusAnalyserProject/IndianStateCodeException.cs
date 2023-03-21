@@ -11,6 +11,7 @@ namespace IndianStateCensusAnalyserProject
         public enum IndianStateCensusExcepctionType
         {
             INCORRECT_FILE_PATH,
+            INCORRECT_FILE_TYPE,
         }
 
         public IndianStateCensusExcepctionType type;
