@@ -69,14 +69,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsvStateCences.cs" />
+    <Compile Include="CsvStateCode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateCensusAnalyserModel.cs" />
+    <Compile Include="StateCodeAnalyserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Files\StateCensusData %281%29.csv" />
-    <None Include="Files\StateCode %281%29.csv" />
+    <None Include="Files\StateCensusData.csv" />
+    <None Include="Files\StateCode.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

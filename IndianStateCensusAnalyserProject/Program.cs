@@ -11,8 +11,12 @@ namespace IndianStateCensusAnalyserProject
         static void Main(string[] args)
         {
             string stateCensusFilePath = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusData.csv";
+            string stateCodeFilePath = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCode.csv";
+            
             CsvStateCences csvStateCences = new CsvStateCences();
-            csvStateCences.ReadCensusDeta(stateCensusFilePath);
+            CsvStateCode csvStateCode = new CsvStateCode();
+            csvStateCences.ReadCensusData(stateCensusFilePath);
+            csvStateCode.ReadCodeData(stateCodeFilePath);
 
             Console.ReadLine();
         }

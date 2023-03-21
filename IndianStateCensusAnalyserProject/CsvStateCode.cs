@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 
 namespace IndianStateCensusAnalyserProject
 {
-    public class CsvStateCences
+    public class CsvStateCode
     {
-        public void ReadCensusData(string filePath)
+        public void ReadCodeData(string filePath)
         {
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                var records = csv.GetRecords<StateCensusAnalyserModel>().ToList();
+                var records = csv.GetRecords<StateCodeAnalyserModel>().ToList();
 
-                foreach(var record in records)
+                foreach (var record in records)
                 {
-                    Console.WriteLine($"{record.State} {record.Population} {record.AreaInSqKm} {record.DensityPerSqKm}");
+                    // SrNo,State,Name,TIN,StateCode 
+                    Console.WriteLine($"{record.SrNo} {record.StateName} {record.TIN} {record.StateCode} ");
                 }
             }
         }
