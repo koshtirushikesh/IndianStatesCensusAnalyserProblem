@@ -15,7 +15,7 @@ namespace IndianStateCensusAnalyserProject
             
             CsvStateCences csvStateCences = new CsvStateCences();
             CsvStateCode csvStateCode = new CsvStateCode();
-            csvStateCences.ReadCensusData(stateCensusFilePath);
+            csvStateCences.ReadCensusDeta(stateCensusFilePath);
             csvStateCode.ReadCodeData(stateCodeFilePath);
 
             Console.ReadLine();

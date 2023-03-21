@@ -13,6 +13,5 @@ namespace IndianStateCensusAnalyserProject
         public string StateName { get; set; }
         public string StateCode { get; set; }
         public string TIN { get; set; }
-       // public string StateCode { get; set; };
     }
 }

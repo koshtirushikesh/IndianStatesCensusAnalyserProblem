@@ -11,7 +11,7 @@ namespace IndianStateCensusAnalyserProject
 {
     public class CsvStateCode
     {
-        public void ReadCodeData(string filePath)
+        public int ReadCodeData(string filePath)
         {
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -23,6 +23,7 @@ namespace IndianStateCensusAnalyserProject
                     // SrNo,State,Name,TIN,StateCode 
                     Console.WriteLine($"{record.SrNo} {record.StateName} {record.TIN} {record.StateCode} ");
                 }
+                return records.Count();
             }
         }
     }
