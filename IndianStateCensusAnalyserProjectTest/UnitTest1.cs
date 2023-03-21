@@ -5,6 +5,7 @@ namespace IndianStateCensusAnalyserProjectTest
     public class Tests
     {
         string stateCensusFilePath = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusData.csv";
+        string stateCensusFilePathIncorrect = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusDataa.csv";
        
         CsvStateCences csvStateCensus = new CsvStateCences();
         
@@ -19,11 +20,24 @@ namespace IndianStateCensusAnalyserProjectTest
         {
             try
             {
+                csvStateCensus.ReadCensusDeta(stateCensusFilePathIncorrect);
+            }
+            catch (IndianStateCensusExcepction ex)
+            {
+                Assert.AreEqual("Incorrect file Path", ex.Message);
+            }
+        }
+
+        [Test]
+        public void GivenIncorrectFiletype_ShouldReturnCustomeException()
+        {
+            try
+            {
                 csvStateCensus.ReadCensusDeta(stateCensusFilePath);
             }
             catch (IndianStateCensusExcepction ex)
             {
-                Assert.AreEqual("Incorrect file Path",ex.Message);
+                Assert.AreEqual("Incorrect file type", ex.Message);
             }
         }
     }
