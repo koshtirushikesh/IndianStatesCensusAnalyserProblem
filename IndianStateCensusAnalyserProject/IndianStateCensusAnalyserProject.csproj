@@ -71,6 +71,7 @@
     <Compile Include="CsvStateCences.cs" />
     <Compile Include="IndianStateCensusExcepction.cs" />
     <Compile Include="CsvStateCode.cs" />
+    <Compile Include="IndianStateCodeException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateCensusAnalyserModel.cs" />
