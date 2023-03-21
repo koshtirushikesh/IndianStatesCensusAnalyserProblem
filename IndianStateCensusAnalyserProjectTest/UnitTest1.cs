@@ -56,5 +56,19 @@ namespace IndianStateCensusAnalyserProjectTest
                 Assert.AreEqual("Incorrect Delimiter", ex.Message);
             }
         }
+
+        [Test]
+        public void GivenIncorrectHeader_ShouldReturnCustomeException()
+        {
+            try
+            {
+                string Header = "State,Population,AreaInSqKm,DensityPerSqKm";
+                csvStateCensus.ReadStateCensusData(stateCensusFileHeaderIncorrect, Header);
+            }
+            catch (IndianStateCensusExcepction ex)
+            {
+                Assert.AreEqual("Incorrect Header", ex.Message);
+            }
+        }
     }
 }

@@ -42,5 +42,17 @@ namespace IndianStateCensusAnalyserProject
                 return records.Count();
             }
         }
+
+        public bool ReadStateCensusData(string filePath, string actualHeader)
+        {
+            var csvfile = File.ReadAllLines(filePath);
+            string header = csvfile[0];
+
+            if (!header.Equals(actualHeader))
+                return true;
+            else
+                throw new IndianStateCensusExcepction(IndianStateCensusExcepction.IndianStateCensusExcepctionType.INCORRECT_DELIMETER, "Incorrect Header");
+
+        }
     }
 }
