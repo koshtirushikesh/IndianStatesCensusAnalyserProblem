@@ -6,7 +6,10 @@ namespace IndianStateCensusAnalyserProjectTest
     {
         string stateCensusFilePath = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusData.csv";
         string stateCensusFilePathIncorrect = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusDataa.csv";
-       
+        string stateCensusFileTypeIncorrect = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusData - Copy (2).json";
+        string stateCensusFileHeaderIncorrect = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusData - Copy.csv";
+        string stateCensusFileDelimiterIncorrect = "C:\\Users\\Rushi\\source\\repos\\IndianStatesCensusAnalyserProblem\\IndianStateCensusAnalyserProject\\Files\\StateCensusData - Copy.csv";
+
         CsvStateCences csvStateCensus = new CsvStateCences();
         
         [Test]
@@ -29,15 +32,28 @@ namespace IndianStateCensusAnalyserProjectTest
         }
 
         [Test]
-        public void GivenIncorrectFiletype_ShouldReturnCustomeException()
+        public void GivenIncorrectFileType_ShouldReturnCustomeException()
         {
             try
             {
-                csvStateCensus.ReadCensusDeta(stateCensusFilePath);
+                csvStateCensus.ReadCensusDeta(stateCensusFileTypeIncorrect);
             }
             catch (IndianStateCensusExcepction ex)
             {
-                Assert.AreEqual("Incorrect file type", ex.Message);
+                Assert.AreEqual("Incorrect file Type", ex.Message);
+            }
+        }
+
+        [Test]
+        public void GivenIncorrectDelimeter_ShouldReturnCustomeException()
+        {
+            try
+            {
+                csvStateCensus.ReadCensusDeta(stateCensusFileDelimiterIncorrect);
+            }
+            catch (IndianStateCensusExcepction ex)
+            {
+                Assert.AreEqual("Incorrect Delimiter", ex.Message);
             }
         }
     }
