@@ -43,15 +43,15 @@ namespace IndianStateCensusAnalyserProject
             }
         }
 
-        public bool ReadStateCensusData(string filePath, string actualHeader)
+        public bool ReadStateCensusData(string filePath, string expectedHeader)
         {
             var csvfile = File.ReadAllLines(filePath);
             string header = csvfile[0];
 
-            if (!header.Equals(actualHeader))
+            if (header.Equals(expectedHeader))
                 return true;
             else
-                throw new IndianStateCensusExcepction(IndianStateCensusExcepction.IndianStateCensusExcepctionType.INCORRECT_DELIMETER, "Incorrect Header");
+                throw new IndianStateCensusExcepction(IndianStateCensusExcepction.IndianStateCensusExcepctionType.INCORRECT_HEADER, "Incorrect Header");
 
         }
     }
