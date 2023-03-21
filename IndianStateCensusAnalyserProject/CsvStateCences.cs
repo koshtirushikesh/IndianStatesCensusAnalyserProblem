@@ -11,11 +11,7 @@ namespace IndianStateCensusAnalyserProject
 {
     public class CsvStateCences
     {
-<<<<<<< HEAD
         public int ReadCensusDeta(string filePath)
-=======
-        public void ReadCensusData(string filePath)
->>>>>>> UC2_loadStatesCodeData
         {
             if (!File.Exists(filePath))
             {
