@@ -13,5 +13,18 @@ namespace IndianStateCensusAnalyserProjectTest
         {
             Assert.AreEqual( 29, csvStateCensus.ReadCensusDeta(stateCensusFilePath));
         }
+
+        [Test]
+        public void GivenIncorrectFilePath_ShouldReturnCustomeException()
+        {
+            try
+            {
+                csvStateCensus.ReadCensusDeta(stateCensusFilePath);
+            }
+            catch (IndianStateCensusExcepction ex)
+            {
+                Assert.AreEqual("Incorrect file Path",ex.Message);
+            }
+        }
     }
 }
